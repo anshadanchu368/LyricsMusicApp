@@ -1,9 +1,12 @@
+import {useDispatch,useSelector} from 'react-redux';
+
 import { Error,Loader,SongCard } from '../components';
 import { genres } from '../assets/constants'
 import { useGetSearchResultsQuery } from '../redux/MusicApi';
 
 const Discover = () => {
-     
+
+
   const { data, isFetching, error } = useGetSearchResultsQuery({q:'eminem'});
  
   if(isFetching) return <Loader title="Loading .."/>
